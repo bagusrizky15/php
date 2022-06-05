@@ -19,4 +19,8 @@ echo "<br>";
 
 //menampilkan satu elemen pada array 
 echo $bulan[1];
+$bulan[] = "Maret";
+
+echo "<br>";
+echo $bulan[2];
 ?>
