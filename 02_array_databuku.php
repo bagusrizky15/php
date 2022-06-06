@@ -29,14 +29,25 @@ $buku = [
 
 <head>
     <title>Data Buku Perpustakaan</title>
+    <style>
+        .kotak {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
 </head>
 
 <body>
+    <h1>Data Perpustakaan</h1>
     <ul>
         <?php foreach ($buku as $databuku) : ?>
             <?php foreach ($databuku as $datalengkap) : ?>
                 <li><?= $datalengkap ?></li>
             <?php endforeach; ?>
+            <br>
         <?php endforeach; ?>
     </ul>
 
