@@ -6,7 +6,7 @@ $hari = array("senin", "selasa");
 echo $hari;
 
 //cara baru
-$bulan = ["Januari", "Februari"];
+$bulan = ["Januari", "Februari", "Maret"];
 echo $bulan;
 
 //tidak bisa menggunakan echo
