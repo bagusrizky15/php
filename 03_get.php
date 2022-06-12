@@ -38,7 +38,13 @@ $buku = [
         <?php foreach ($buku as $databuku) : ?>
 
             <li>
-                <a href="03_get2.php?nama= <?= $databuku["judul"];?>"> <?= $databuku["judul"]; ?></a>
+                <a href="03_get2.php?judul= <?= $databuku["judul"];?>
+                &pengarang=<?= $databuku["pengarang"]; ?>
+                &isbn=<?= $databuku["isbn"]; ?>
+                &harga=<?= $databuku["harga"]; ?>
+                &tahun=<?= $databuku["tahun"]; ?>
+                "><?= $databuku["judul"]; ?>
+            </a>
             </li>
 
             <br>
