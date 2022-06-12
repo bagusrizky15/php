@@ -29,7 +29,8 @@ $buku = [
 
 <head>
     <title>GET</title>
-    
+    <!-- metode pengiriman data lewat URL dan menangkap data menggunakan variabel superglobal $_GET
+     -->
 </head>
 
 <body>

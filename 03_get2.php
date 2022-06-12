@@ -1,3 +1,14 @@
+<?php
+if (!isset($_GET["judul"]) || 
+    !isset($_GET["pengarang"])
+    ) {
+    //redirect
+    header("Location: 03_get.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
