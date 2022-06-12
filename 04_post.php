@@ -10,7 +10,11 @@
     <title>POST</title>
 </head>
 <body>
-    <form action="04_post2.php" method="post">
+    <?php if (isset($_POST["submit"]) && isset($_POST["nama"]) ) :?> 
+              <h1>Halo <?= $_POST["nama"]; ?></h1>
+    <?php endif; ?>
+  
+    <form action="" method="post">
         <input type="text" name="nama">
         <br>
         <button type="submit" name="submit">Kirim</button>
