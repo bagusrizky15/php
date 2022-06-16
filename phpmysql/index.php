@@ -26,6 +26,10 @@
                 <a href="#">Hapus</a>
             </td>
             <td><img src="" alt=""></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
 
     </table>
