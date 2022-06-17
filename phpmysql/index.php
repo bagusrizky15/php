@@ -1,3 +1,10 @@
+<?php
+
+    //koneksi
+    mysqli_connect("localhost", "root", "root", "phpdasar");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
