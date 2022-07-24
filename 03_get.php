@@ -43,8 +43,8 @@ $buku = [
                 &pengarang=<?= $databuku["pengarang"]; ?>
                 &isbn=<?= $databuku["isbn"]; ?>
                 &harga=<?= $databuku["harga"]; ?>
-                &tahun=<?= $databuku["tahun"]; ?>
-                "><?= $databuku["judul"]; ?>
+                &tahun=<?= $databuku["tahun"]; ?>">
+                <?= $databuku["judul"]; ?>
             </a>
             </li>
 
