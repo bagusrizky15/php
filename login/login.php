@@ -2,19 +2,16 @@
 
 //cek tombol submit
 if (isset($_POST["submit"])) {
+    //cek username dan pw
     if ($_POST["username"] == "admin" && $_POST["password"] == "123") {
+        //jika benar ganti halaman
         header("Location: admin.php");
         exit;
     } else {
+        //jika salah tampilkan error
         $error = true;
     }
 }
-
-//cek username dan pw
-
-//jika benar ganti halaman
-
-//jika salah tidak ganti halaman
 
 ?>
 
