@@ -1,3 +1,13 @@
+<?php
+
+if(!isset($_GET["nama"]))
+{
+    header("Location : 04_post.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
