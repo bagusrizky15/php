@@ -1,4 +1,6 @@
 <?php
+
+//cek apakah sudah ada data di $_GET
 if (!isset($_GET["judul"]) || 
     !isset($_GET["pengarang"])
     ) {
