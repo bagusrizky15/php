@@ -1,7 +1,10 @@
 <?php
 
     //koneksi
-    mysqli_connect("localhost", "root", "root", "phpdasar");
+    $conn = mysqli_connect("localhost", "root", "root", "phpdasar");
+
+    //ambil data dari tabel mahasiswa
+    mysqli_query($conn, "SELECT * FROM mahasiswa");
 
 ?>
 
@@ -9,7 +12,7 @@
 <html lang="en">
 <head>
    
-    <title>Admin</title>
+    <title>php mysql</title>
 </head>
 <body>
     <h1>Daftar Mahasiswa</h1>
