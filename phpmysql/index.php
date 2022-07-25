@@ -4,7 +4,14 @@
     $conn = mysqli_connect("localhost", "root", "root", "phpdasar");
 
     //ambil data dari tabel mahasiswa
-    mysqli_query($conn, "SELECT * FROM mahasiswa");
+    $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+
+    //ambil data mahasiswa dari object result (fetch)
+    //mysqli_fetch_row // mengembalikan array numeric
+    //mysqli_fetch_object
+    //mysqli_fetch_array
+    $ambil = mysqli_fetch_array($result);
+    var_dump($ambil);
 
 ?>
 
