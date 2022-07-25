@@ -11,8 +11,12 @@
     //mysqli_fetch_object // mengembalikan object result // tidak akan di pakai
     //mysqli_fetch_array //mengembalikan array numeric dan assosiatif
     //mysqli_fetch_assoc // mengembalikan array assosiatif
-    $ambil = mysqli_fetch_assoc($result);
-    var_dump($ambil["jurusan"]);
+    while ($ambil = mysqli_fetch_assoc($result)) {
+        # code...
+        var_dump($ambil);
+    }
+    
+    
 
 ?>
 
