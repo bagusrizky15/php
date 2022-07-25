@@ -8,8 +8,8 @@
 
     //ambil data mahasiswa dari object result (fetch)
     //mysqli_fetch_row // mengembalikan array numeric
-    //mysqli_fetch_object
-    //mysqli_fetch_array //mengembalikan 
+    //mysqli_fetch_object // mengembalikan object result // tidak akan di pakai
+    //mysqli_fetch_array //mengembalikan array numeric dan assosiatif
     //mysqli_fetch_assoc // mengembalikan array assosiatif
     $ambil = mysqli_fetch_assoc($result);
     var_dump($ambil["jurusan"]);
