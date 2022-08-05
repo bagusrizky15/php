@@ -18,7 +18,11 @@ if (isset($_POST["submit"])) {
     mysqli_query($conn, $query);
 
     if(mysqli_affected_rows($conn)>0){
-        echo "data berhasil";
+        echo "
+        <script>
+
+        </script>
+        ";
     } else {
         echo "gagal";
         echo "<br>";

@@ -52,7 +52,8 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 
         <?php
             $i++;
-        endforeach; ?>
+        endforeach; 
+        ?>
 
     </table>
 </body>
