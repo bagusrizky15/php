@@ -9,7 +9,6 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $jurusan = $_POST["jurusan"];
     $gambar = $_POST["gambar"];
-
     //query insert data
     $query = "INSERT INTO mahasiswa
         VALUES
@@ -20,11 +19,15 @@ if (isset($_POST["submit"])) {
     if(mysqli_affected_rows($conn)>0){
         echo "
         <script>
-
+            alert('Data berhasil dimasukan');
         </script>
         ";
     } else {
-        echo "gagal";
+        echo "
+        <script>
+            alert('Data gagal dimasukan');
+        </script>
+        ";
         echo "<br>";
         echo mysqli_error($conn);
     }
