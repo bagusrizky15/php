@@ -16,11 +16,11 @@ function query($query){
 
 function tambah($data){
     global $conn;
-    $nama = $data["nama"];
-    $nim = $data["nim"];
-    $email = $data["email"];
-    $jurusan = $data["jurusan"];
-    $gambar = $data["gambar"];
+    $nama = htmlspecialchars($data["nama"]);
+    $nim = htmlspecialchars($data["nim"]);
+    $email = htmlspecialchars($data["email"]);
+    $jurusan = htmlspecialchars($data["jurusan"]);
+    $gambar = htmlspecialchars($data["gambar"]);
 
      //query insert data
     $query = "INSERT INTO mahasiswa
