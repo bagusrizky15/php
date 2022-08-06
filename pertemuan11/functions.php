@@ -41,6 +41,7 @@ function hapus($id){
 
 function ubah($data){
     global $conn;
+
     $id = $data["id"];
     $nama = htmlspecialchars($data["nama"]);
     $nim = htmlspecialchars($data["nim"]);
@@ -51,7 +52,11 @@ function ubah($data){
      //query insert data
     $query = "UPDATE mahasiswa
         SET
-        '$nama', '$nim', '$email', '$jurusan', '$gambar'
+        nama = '$nama', 
+        nim = '$nim', 
+        email = '$email',
+        jurusan = '$jurusan',
+        gambar = '$gambar'
         WHERE id = $id
         ";
     mysqli_query($conn, $query);

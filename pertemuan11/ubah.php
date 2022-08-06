@@ -12,7 +12,7 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
 if (isset($_POST["submit"])) {
 
     //cek apakah data berhasil diubah
-    if (ubah($_POST)>0) {
+    if (ubah($_POST) > 0) {
         echo "
         <script>
             alert('Data berhasil diubah');
