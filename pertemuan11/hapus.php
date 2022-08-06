@@ -3,7 +3,6 @@
 require 'functions.php';
 
 $id = $_GET["id"];
-var_dump($id);
 
 if(hapus($id)>0)
 {

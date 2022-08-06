@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
 <body>
     <h1>Ubah Data Mahasiswa</h1>
     <form action="" method="post">
-        <input type="hidden" name="id" value="<?= ["$id"] ?>">
+        <input type="hidden" name="id" value="<?= $mhs["id"] ?>">
 
         <ul>
             <li>
