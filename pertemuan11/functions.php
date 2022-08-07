@@ -32,11 +32,10 @@ function tambah($data){
     return mysqli_affected_rows($conn);
 }
 
-function hapus($id){
+function delete($id){
     global $conn;
 
-    $query = "DELETE FROM mahasiswa
-    WHERE id = $id";
+    $query = "DELETE FROM mahasiswa WHERE id = $id";
 
     mysqli_query($conn, $query);
     

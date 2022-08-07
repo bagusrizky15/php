@@ -1,10 +1,10 @@
 <?php
 
 require 'functions.php';
-
 $id = $_GET["id"];
 
-if(hapus($id)>0)
+
+if( delete($id) > 0)
 {
     echo "
     <script>
