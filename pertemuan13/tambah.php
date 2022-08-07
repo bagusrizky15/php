@@ -3,9 +3,9 @@
 require 'functions.php';
 //cek apakah tombol submit udah di pencet
 if (isset($_POST["submit"])) {
-    var_dump($_POST);
-    var_dump($_FILES);
-    die;
+    // var_dump($_POST);
+    // var_dump($_FILES);
+    // die;
 
     //cek apakah data berhasil masuk
     if (tambah($_POST)>0) {
@@ -59,7 +59,7 @@ if (isset($_POST["submit"])) {
             </li>
             <li>
                 <label for="gambar">Gambar</label>
-                <input type="file" name="gambar" id="gambar" required>
+                <input type="file" name="gambar" id="gambar">
             </li>
             <li>
                 <button type="submit" name="submit">

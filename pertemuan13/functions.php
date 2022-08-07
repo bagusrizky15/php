@@ -22,7 +22,6 @@ function tambah($data){
     $jurusan = htmlspecialchars($data["jurusan"]);
 
     //upload gambar
-
     $gambar = upload();
     if (!$gambar) {
         return false;
@@ -40,21 +39,6 @@ function tambah($data){
     return mysqli_affected_rows($conn);
 }
 
-function upload(){
-    $file = $_FILES['gambar']['name'];
-    $ukuranFile = $_FILES['gambar']['size'];
-    $error = $_FILES['gambar']['error'];
-    $tmpName = $_FILES['gamber']['tmp_name'];
-
-    if ($error === 4) {
-        echo "<script>
-            alert('pilih gambar');
-        </script>
-        ";
-
-        return false;
-    }
-}
 
 function delete($id){
     global $conn;
@@ -101,6 +85,36 @@ function cari($keyword){
     jurusan LIKE '%$keyword%'
     ";
     return query($query);
+}
+
+function upload(){
+    $namaFile = $_FILES['gambar']['name']; //mengambil nama file
+    $ukuranFile = $_FILES['gambar']['size']; //mengambil ukuran file
+    $error = $_FILES['gambar']['error']; //error
+    $tmpName = $_FILES['gamber']['tmp_name'];
+
+    //cek apakah tidak ada gambar yang di upload
+    if ($error === 4) {
+        echo "<script>
+            alert('pilih gambar terlebih dahulu!');
+            </script>";
+
+        return false;
+    }
+
+    //cek apakah yang diupload itu gambar atau bukan
+    $ekstensiGambarValid = ['jpg', 'png', 'jpeg'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+            alert('yang anda upload bukan gambar');
+            </script>";
+
+        return false;
+    }
+
 }
 
 ?>
