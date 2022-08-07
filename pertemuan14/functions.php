@@ -166,7 +166,7 @@ function registrasi($data){
         return false;
     } 
 
-    //enkripsi password 
+    //enkripsi password menggunakan password hash
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     //tambahkan user
