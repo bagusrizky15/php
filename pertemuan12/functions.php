@@ -68,4 +68,15 @@ function ubah($data){
 
 }
 
+function cari($keyword){
+    $query = "SELECT * FROM mahasiswa 
+    WHERE 
+    nama LIKE '%$keyword%' OR
+    nim LIKE '%$keyword%' OR
+    email LIKE '%$keyword%' OR
+    jurusan LIKE '%$keyword%'
+    ";
+    return query($query);
+}
+
 ?>

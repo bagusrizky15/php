@@ -3,6 +3,12 @@
 require 'functions.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
 
+//tombol cari di klik
+if(isset ($_POST["cari"]))
+{
+    $mahasiswa = cari($_POST["keyword"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +24,12 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
     <a href="tambah.php">
         Tambah Data Mahasiswa
     </a>
+    <br><br>
+
+    <form action="" method="post">
+        <input type="text" name="keyword" size="40" autofocus placeholder="masukan pencarian" autocomplete="off">
+        <button type="submit" name="cari"> Cari </button>
+    </form>
 
     <br>
     <br>
