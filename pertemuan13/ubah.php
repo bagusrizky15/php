@@ -41,7 +41,7 @@ if (isset($_POST["submit"])) {
 
 <body>
     <h1>Ubah Data Mahasiswa</h1>
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
         <input type="hidden" name="id" value="<?= $mhs["id"] ?>">
 
         <ul>
