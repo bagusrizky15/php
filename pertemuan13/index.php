@@ -56,7 +56,7 @@ if(isset ($_POST["cari"]))
                     <a href="delete.php?id=<?= $row["id"]; ?>" 
                     onclick="return confirm('yakin?');">Hapus</a>
                 </td>
-                <td><img src="img/<?= $row["gambar"] ?>" alt=""></td>
+                <td><img width="150" src="img/<?= $row["gambar"] ?>" alt=""></td>
                 <td><?= $row["nim"] ?></td>
                 <td><?= $row["nama"] ?></td>
                 <td><?= $row["email"] ?></td>

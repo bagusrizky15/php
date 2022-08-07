@@ -91,7 +91,7 @@ function upload(){
     $namaFile = $_FILES['gambar']['name']; //mengambil nama file
     $ukuranFile = $_FILES['gambar']['size']; //mengambil ukuran file
     $error = $_FILES['gambar']['error']; //error
-    $tmpName = $_FILES['gamber']['tmp_name'];
+    $tmpName = $_FILES['gambar']['tmp_name'];
 
     //cek apakah tidak ada gambar yang di upload
     if ($error === 4) {
@@ -114,6 +114,23 @@ function upload(){
 
         return false;
     }
+
+    // membatasi ukuran file
+    if ($ukuranFile > 1000000) {
+        echo "<script>
+            alert('Ukuran gambar terlalu besar');
+            </script>";
+        return false;
+    }
+
+    //generate nama baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    //upload gambar
+    move_uploaded_file($tmpName, 'img/'.$namaFileBaru);
+    return $namaFileBaru;
 
 }
 

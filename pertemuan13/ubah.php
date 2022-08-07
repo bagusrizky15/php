@@ -68,8 +68,8 @@ if (isset($_POST["submit"])) {
             </li>
             <li>
                 <label for="gambar">Gambar</label>
-                <input type="text" name="gambar" id="gambar" required
-                value="<?= $mhs["gambar"];?>">
+                <img width="150" src="img/<?= $mhs['gambar'];?>" alt="">
+                <input type="file" name="gambar" id="gambar">
             </li>
             <li>
                 <button type="submit" name="submit">
