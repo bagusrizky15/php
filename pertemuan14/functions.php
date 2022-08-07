@@ -27,8 +27,6 @@ function tambah($data){
         return false;
     }
 
-    //$gambar = htmlspecialchars($data["gambar"]);
-
      //query insert data
     $query = "INSERT INTO mahasiswa
         VALUES
