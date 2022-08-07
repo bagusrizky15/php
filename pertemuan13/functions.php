@@ -20,7 +20,15 @@ function tambah($data){
     $nim = htmlspecialchars($data["nim"]);
     $email = htmlspecialchars($data["email"]);
     $jurusan = htmlspecialchars($data["jurusan"]);
-    $gambar = htmlspecialchars($data["gambar"]);
+
+    //upload gambar
+
+    $gambar = upload();
+    if (!$gambar) {
+        return false;
+    }
+
+    //$gambar = htmlspecialchars($data["gambar"]);
 
      //query insert data
     $query = "INSERT INTO mahasiswa
@@ -30,6 +38,22 @@ function tambah($data){
     mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
+}
+
+function upload(){
+    $file = $_FILES['gambar']['name'];
+    $ukuranFile = $_FILES['gambar']['size'];
+    $error = $_FILES['gambar']['error'];
+    $tmpName = $_FILES['gamber']['tmp_name'];
+
+    if ($error === 4) {
+        echo "<script>
+            alert('pilih gambar');
+        </script>
+        ";
+
+        return false;
+    }
 }
 
 function delete($id){
