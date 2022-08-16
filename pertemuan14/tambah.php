@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (!isset($_SESSION["login"])) {
+    header("Location: login.php");
+}
 require 'functions.php';
 //cek apakah tombol submit udah di pencet
 if (isset($_POST["submit"])) {

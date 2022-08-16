@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require 'functions.php';
     if (isset($_POST["login"])) {
         $username = $_POST["username"];
@@ -11,6 +11,9 @@ require 'functions.php';
         if (mysqli_num_rows($result)===1) {
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row["password"])){
+
+                //set session
+                $_SESSION["login"] = true;
                 header("Location: index.php");
                 exit;
             }
