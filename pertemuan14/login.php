@@ -7,7 +7,7 @@ require 'functions.php';
 
     $result = mysqli_query($conn, "SELECT * FROM user WHERE
         username = '$username'");
-        
+
         if (mysqli_num_rows($result)===1) {
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row["password"])){
@@ -15,6 +15,8 @@ require 'functions.php';
                 exit;
             }
         }
+
+        $error = true;
 
 
     }
@@ -31,6 +33,10 @@ require 'functions.php';
 </head>
 <body>
     <h1>Halaman Login</h1>
+
+    <?php if (isset($error)) : ?>
+        <p style="color: red; font-style: italic">Username/Password Salah</p>
+    <?php endif; ?>
     <form action="" method="POST">
         <ul>
             <li>
