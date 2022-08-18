@@ -13,11 +13,7 @@ $total = count(query("SELECT * FROM mahasiswa"));
 var_dump($total);
 
 $jumlahHalaman = ceil($total / $jumlahData);
-if (isset($_GET["halaman"])) { 
-$halamanAktif = $_GET['halaman'];
-}else {
-    $halamanAktif = 1;
-}
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET['halaman'] : 1;
 var_dump($halamanAktif);
 
 // $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
