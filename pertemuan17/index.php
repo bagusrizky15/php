@@ -9,10 +9,21 @@ require 'functions.php';
 //konfigurasi
 
 $jumlahData = 2;
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
-$total = mysqli_num_rows($result);
-
+$total = count(query("SELECT * FROM mahasiswa"));
 var_dump($total);
+
+$jumlahHalaman = ceil($total / $jumlahData);
+if (isset($_GET["halaman"])) { 
+$halamanAktif = $_GET['halaman'];
+}else {
+    $halamanAktif = 1;
+}
+var_dump($halamanAktif);
+
+// $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+// $total = mysqli_num_rows($result);
+
+// var_dump($total);
 
 $mahasiswa = query("SELECT * FROM mahasiswa LIMIT 0,$jumlahData");
 
@@ -33,7 +44,7 @@ if(isset ($_POST["cari"]))
 
 <body>
 
-<a href="logout.php">Log out</a>
+    <a href="logout.php">Log out</a>
     <h1>Daftar Mahasiswa</h1>
 
     <a href="tambah.php">
@@ -64,19 +75,18 @@ if(isset ($_POST["cari"]))
         <?php
         $i = 1;
         foreach($mahasiswa as $row) : ?>
-            <tr>
-                <td><?= $i ?></td>
-                <td>
-                    <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a> |
-                    <a href="delete.php?id=<?= $row["id"]; ?>" 
-                    onclick="return confirm('yakin?');">Hapus</a>
-                </td>
-                <td><img width="150" src="img/<?= $row["gambar"] ?>" alt=""></td>
-                <td><?= $row["nim"] ?></td>
-                <td><?= $row["nama"] ?></td>
-                <td><?= $row["email"] ?></td>
-                <td><?= $row["jurusan"] ?></td>
-            </tr>
+        <tr>
+            <td><?= $i ?></td>
+            <td>
+                <a href="ubah.php?id=<?= $row["id"]; ?>">Ubah</a> |
+                <a href="delete.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?');">Hapus</a>
+            </td>
+            <td><img width="150" src="img/<?= $row["gambar"] ?>" alt=""></td>
+            <td><?= $row["nim"] ?></td>
+            <td><?= $row["nama"] ?></td>
+            <td><?= $row["email"] ?></td>
+            <td><?= $row["jurusan"] ?></td>
+        </tr>
 
         <?php
             $i++;
