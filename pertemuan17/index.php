@@ -8,12 +8,13 @@ require 'functions.php';
 //pagination
 //konfigurasi
 
-$jumlahData = 2;
+$jumlahData = 6;
 $total = count(query("SELECT * FROM mahasiswa"));
 var_dump($total);
 
 $jumlahHalaman = ceil($total / $jumlahData);
 $halamanAktif = (isset($_GET["halaman"])) ? $_GET['halaman'] : 1;
+$awalData = ($halamanAktif + $jumlahData) - $jumlahData;
 var_dump($halamanAktif);
 
 // $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
@@ -21,7 +22,7 @@ var_dump($halamanAktif);
 
 // var_dump($total);
 
-$mahasiswa = query("SELECT * FROM mahasiswa LIMIT 0,$jumlahData");
+$mahasiswa = query("SELECT * FROM mahasiswa LIMIT $awalData,$jumlahData");
 
 //tombol cari di klik
 if(isset ($_POST["cari"]))
