@@ -2,11 +2,11 @@
 session_start();
 
 //cek cookie
-// if (isset($_COOKIE['login'])) {
-//     if ($_COOKIE['login']=='true') {
-//         $_SESSION['login'] = true;
-//     }
-// }
+if (isset($_COOKIE['id']) && isset($_COOKIE['key'])) {
+        $id = $_COOKIE['id'];   
+        $key = $_COOKIE['key'];   
+    }
+}
 
 if (isset($_SESSION["login"])) {
     header("Location: index.php");
