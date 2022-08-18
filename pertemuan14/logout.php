@@ -5,6 +5,6 @@ session_destroy();
 
 
 //header("Location : login.php");
-var_dump(header("Location : login.php"));
+header("Location : login.php");
 exit;
 ?>
