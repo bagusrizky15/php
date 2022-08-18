@@ -4,7 +4,17 @@ if (!isset($_SESSION["login"])) {
     header("Location: login.php");
 }
 require 'functions.php';
-$mahasiswa = query("SELECT * FROM mahasiswa");
+
+//pagination
+//konfigurasi
+
+$jumlahData = 2;
+$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
+$total = mysqli_num_rows($result);
+
+var_dump($total);
+
+$mahasiswa = query("SELECT * FROM mahasiswa LIMIT 0,$jumlahData");
 
 //tombol cari di klik
 if(isset ($_POST["cari"]))
