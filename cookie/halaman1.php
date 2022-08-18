@@ -1,5 +1,5 @@
 <?php
 
-setcookie('nama', 'Bagus');
+setcookie('nama', 'Bagus', time()+10);
 
 ?>
