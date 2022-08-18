@@ -54,6 +54,16 @@ if(isset ($_POST["cari"]))
         <button type="submit" name="cari"> Cari </button>
     </form>
 
+    <!-- navigation -->
+    <?php for($i = 1; $i<=$jumlahHalaman; $i++) : ?>
+    <?php if($i == $halamanAktif) : ?>
+        <a href="?halaman=<?= $i ?>" style="font-weight:bold; color:red;"><?= $i ?> </a>
+    
+    <?php else : ?>
+        <a href="?halaman=<?= $i ?>"> <?= $i ?> </a>
+
+    <?php endif; ?>
+    <?php endfor;  ?>
     <br>
     <br>
 
